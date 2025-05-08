@@ -1,0 +1,11 @@
+services:
+  leiturista_panel:
+    build:
+      context: ./leiturista_panel
+      dockerfile: Dockerfile
+    container_name: leiturista_panel
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped

@@ -1,0 +1,51 @@
+.container {
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.titulo {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.descricao {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #666;
+}
+
+/* Variantes */
+.padrao {
+    background-color: #f8f9fa;
+    border-left: 4px solid #007bff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.destaque {
+    background-color: #e8f4ff;
+    border-left: 4px solid #0056b3;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.simples {
+    background-color: transparent;
+    border-bottom: 2px solid #ddd;
+    border-left: none;
+    border-radius: 0;
+    padding: 1rem 0;
+}
+
+.container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.simples:hover {
+    transform: none;
+    border-bottom-color: #007bff;
+    box-shadow: none;
+}

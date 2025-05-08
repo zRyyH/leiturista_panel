@@ -1,0 +1,129 @@
+/* Card.module.css */
+
+/* Estilos Base do Card */
+.card {
+    --card-bg-color: #ffffff;
+    --card-text-color: #333333;
+    --card-label-color: #6e6e6e;
+    --card-border-color: #e0e0e0;
+    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.12);
+    --card-radius: 12px;
+    --card-padding-sm: 16px;
+    --card-padding-md: 24px;
+    --card-padding-lg: 32px;
+    --card-transition: all 0.2s ease-in-out;
+    --card-outlined-bg: #ffffff;
+    --card-outlined-border: 1px solid #e0e0e0;
+    --card-elevated-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+
+    background-color: var(--card-bg-color);
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: var(--card-transition);
+}
+
+/* Variantes de Card */
+.card--default {
+    box-shadow: var(--card-shadow);
+}
+
+.card--outlined {
+    background-color: var(--card-outlined-bg);
+    border: var(--card-outlined-border);
+}
+
+.card--elevated {
+    box-shadow: var(--card-elevated-shadow);
+}
+
+/* Tamanhos de Card */
+.card--small {
+    padding: var(--card-padding-sm);
+}
+
+.card--medium {
+    padding: var(--card-padding-md);
+}
+
+.card--large {
+    padding: var(--card-padding-lg);
+}
+
+/* Modificadores */
+.card--bordered {
+    border: 1px solid var(--card-border-color);
+}
+
+.card--hoverable:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+/* Cabeçalho do Card */
+.cardHeader {
+    margin-bottom: 20px;
+}
+
+.cardTitle {
+    margin: 0 0 4px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--card-text-color);
+    line-height: 1.4;
+}
+
+.cardSubtitle {
+    margin: 0;
+    font-size: 14px;
+    color: var(--card-label-color);
+    font-weight: 400;
+}
+
+/* Conteúdo do Card */
+.cardContent {
+    flex: 1;
+}
+
+/* Grid de Dados */
+.dataGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+}
+
+/* Item de Dados Individual */
+.dataItem {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.dataLabel {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--card-label-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.dataValue {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--card-text-color);
+}
+
+/* Responsividade */
+@media (max-width: 640px) {
+    .dataGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card--small,
+    .card--medium,
+    .card--large {
+        padding: var(--card-padding-sm);
+    }
+}

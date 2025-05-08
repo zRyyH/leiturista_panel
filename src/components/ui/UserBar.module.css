@@ -1,0 +1,126 @@
+.userBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    width: fit-content;
+    transition: all 0.2s ease;
+}
+
+.userInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatarContainer {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.avatarFallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #e2e8f0;
+    color: #64748b;
+}
+
+.variantDark .avatarFallback {
+    background-color: #334155;
+    color: #94a3b8;
+}
+
+.userName {
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.logoutButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    margin-left: 12px;
+}
+
+.logoutButton:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.logoutButton:focus {
+    outline: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Variantes de tamanho */
+.sizeSmall {
+    font-size: 0.75rem;
+}
+
+.sizeSmall .avatarContainer {
+    width: 24px;
+    height: 24px;
+}
+
+.sizeMedium {
+    font-size: 0.875rem;
+}
+
+.sizeMedium .avatarContainer {
+    width: 32px;
+    height: 32px;
+}
+
+.sizeLarge {
+    font-size: 1rem;
+}
+
+.sizeLarge .avatarContainer {
+    width: 40px;
+    height: 40px;
+}
+
+/* Variantes de tema */
+.variantLight {
+    background-color: white;
+    color: #333;
+}
+
+.variantLight .logoutButton {
+    color: #555;
+}
+
+.variantLight .logoutButton:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.variantDark {
+    background-color: #1f2937;
+    color: #f3f4f6;
+}
+
+.variantDark .logoutButton {
+    color: #d1d5db;
+}
+
+.variantDark .logoutButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}

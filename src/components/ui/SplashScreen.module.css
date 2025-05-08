@@ -1,0 +1,307 @@
+.splashScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    overflow: hidden;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    gap: 2rem;
+}
+
+/* Logo e nome da aplicação */
+.logoContainer {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUpIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+}
+
+.defaultLogo {
+    width: 64px;
+    height: 64px;
+    stroke-width: 1.5;
+}
+
+.appName {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUpIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.4s;
+}
+
+/* Barra de progresso */
+.progressContainer {
+    width: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUpIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.6s;
+}
+
+.progressBar {
+    width: 100%;
+    height: 4px;
+    background-color: var(--progress-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progressFill {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    transition: width 0.3s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.progressFill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
+    animation: shimmer 1.5s infinite;
+}
+
+.progressDetails {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+}
+
+.progressText {
+    font-weight: 500;
+}
+
+.progressPercentage {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.readyIcon {
+    width: 16px;
+    height: 16px;
+    animation: pulse 1s infinite;
+}
+
+/* Background elements */
+.backgroundElements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.circle1,
+.circle2,
+.circle3 {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--accent-gradient);
+    opacity: 0.05;
+    filter: blur(40px);
+}
+
+.circle1 {
+    width: 60vh;
+    height: 60vh;
+    top: -10vh;
+    right: -10vh;
+    animation: float1 20s infinite alternate ease-in-out;
+}
+
+.circle2 {
+    width: 40vh;
+    height: 40vh;
+    bottom: -10vh;
+    left: -10vh;
+    animation: float2 15s infinite alternate-reverse ease-in-out;
+}
+
+.circle3 {
+    width: 30vh;
+    height: 30vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 8s infinite alternate ease-in-out;
+}
+
+/* Phases */
+.entering {
+    opacity: 1;
+}
+
+.loaded .progressFill {
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.exiting {
+    opacity: 0;
+    transform: scale(1.05);
+    transition: opacity 0.8s ease-in-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Themes */
+.light {
+    background-color: #ffffff;
+    --text-color: #1a1a1a;
+    --text-secondary: #6b7280;
+    --primary-color: #3b82f6;
+    --progress-bg: #e5e7eb;
+    --accent-gradient: linear-gradient(135deg, #3b82f6, #60a5fa);
+}
+
+.dark {
+    background-color: #0f172a;
+    --text-color: #f9fafb;
+    --text-secondary: #d1d5db;
+    --primary-color: #60a5fa;
+    --progress-bg: #1e293b;
+    --accent-gradient: linear-gradient(135deg, #3b82f6, #818cf8);
+}
+
+.light .appName {
+    color: var(--text-color);
+}
+
+.dark .appName {
+    color: var(--text-color);
+}
+
+.light .progressText,
+.light .progressPercentage {
+    color: var(--text-secondary);
+}
+
+.dark .progressText,
+.dark .progressPercentage {
+    color: var(--text-secondary);
+}
+
+.light .defaultLogo {
+    color: var(--primary-color);
+}
+
+.dark .defaultLogo {
+    color: var(--primary-color);
+}
+
+/* Animations */
+@keyframes fadeUpIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.7;
+        transform: scale(0.98);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0.7;
+        transform: scale(0.98);
+    }
+}
+
+@keyframes float1 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-5%, 5%);
+    }
+}
+
+@keyframes float2 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(5%, -5%);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 640px) {
+    .content {
+        max-width: 280px;
+        gap: 1.5rem;
+    }
+
+    .appName {
+        font-size: 1.5rem;
+    }
+
+    .logo,
+    .defaultLogo {
+        width: 56px;
+        height: 56px;
+    }
+}

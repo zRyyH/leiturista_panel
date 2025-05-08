@@ -1,0 +1,158 @@
+/* Estilos base para o Header minimalista */
+.header {
+    width: 100%;
+    max-width: 1400px;
+    height: 80px;
+    padding: 0 2rem;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    position: sticky;
+    z-index: 1000;
+    /* Animação de entrada */
+    animation: headerSlideDown 0.6s ease forwards;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 12px;
+}
+
+@keyframes headerSlideDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Área do logo */
+.logoArea {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+/* Área de ações */
+.actionsArea {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+/* Variante clara */
+.light {
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #2c2c2c;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* Variante escura */
+.dark {
+    background-color: rgba(26, 26, 26, 0.9);
+    color: #f5f5f5;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* Variante minimalista */
+.minimal {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #2c2c2c;
+    border: none;
+}
+
+/* Modificador de sombra */
+.shadow {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Efeito de flutuação no scroll */
+.smoothScroll {
+    scroll-behavior: smooth;
+}
+
+.header.scrolled {
+    height: 64px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(0);
+}
+
+.header.scrollUp {
+    transform: translateY(0);
+}
+
+.header.scrollDown {
+    transform: translateY(-100%);
+}
+
+/* Script a ser adicionado no componente Header.jsx */
+/* 
+import { useEffect, useRef } from 'react';
+import styles from './Header.module.css';
+
+// No componente Header:
+const headerRef = useRef(null);
+
+useEffect(() => {
+    let lastScrollY = window.scrollY;
+    const header = headerRef.current;
+    
+    const handleScroll = () => {
+        const scrollY = window.scrollY;
+        
+        if (scrollY > 80) {
+            header.classList.add(styles.scrolled);
+            
+            if (scrollY > lastScrollY) {
+                header.classList.add(styles.scrollDown);
+                header.classList.remove(styles.scrollUp);
+            } else {
+                header.classList.add(styles.scrollUp);
+                header.classList.remove(styles.scrollDown);
+            }
+        } else {
+            header.classList.remove(styles.scrolled);
+        }
+        
+        lastScrollY = scrollY;
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+}, []);
+
+// Adicionar ref ao elemento header:
+// <header ref={headerRef} className={headerClasses} style={customStyles}>
+*/
+
+/* Responsividade - mantém a elegância em telas pequenas */
+@media (max-width: 640px) {
+    .header {
+        width: 100%;
+        padding: 0 1rem;
+        height: 64px;
+        margin: 0rem auto;
+    }
+
+    @keyframes headerSlideDown {
+        0% {
+            transform: translateY(-30px);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}
