@@ -1,11 +1,11 @@
 services:
-  leiturista_panel:
+  residente_panel:
     build:
-      context: ./leiturista_panel
+      context: ./residente_panel
       dockerfile: Dockerfile
-    container_name: leiturista_panel
+    container_name: residente_panel
     ports:
-      - "3000:3000"
+      - "3001:3000"
     environment:
       - NODE_ENV=production
     restart: unless-stopped

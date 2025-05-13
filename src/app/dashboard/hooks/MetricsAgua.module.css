@@ -1,0 +1,118 @@
+.metricContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: 15px;
+    width: 50%;
+}
+
+.metricContainer>div:first-child {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+.metricContainer>div:nth-child(5) {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    margin: 10px 0;
+    border: none;
+}
+
+.metricContainer>div:nth-child(2),
+.metricContainer>div:nth-child(3),
+.metricContainer>div:nth-child(4) {
+    grid-row: 3;
+    min-height: 110px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.metricContainer>div:nth-child(2) {
+    grid-column: 1;
+}
+
+.metricContainer>div:nth-child(3) {
+    grid-column: 2;
+}
+
+.metricContainer>div:nth-child(4) {
+    grid-column: 3;
+}
+
+.metricContainer>div:nth-child(5) table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.metricContainer>div:nth-child(5) td,
+.metricContainer>div:nth-child(5) th {
+    padding: 8px;
+}
+
+@media (max-width: 1300px) {
+    .metricContainer {
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .metricContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .metricContainer>div:nth-child(5) {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
+
+    .metricContainer>div:nth-child(2),
+    .metricContainer>div:nth-child(3) {
+        grid-row: 3;
+    }
+
+    .metricContainer>div:nth-child(4) {
+        grid-column: 1 / 3;
+        grid-row: 4;
+    }
+}
+
+@media (max-width: 650px) {
+    .metricContainer {
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto;
+        gap: 15px;
+    }
+
+    .metricContainer>div:first-child {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .metricContainer>div:nth-child(5) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .metricContainer>div:nth-child(2) {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .metricContainer>div:nth-child(3) {
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    .metricContainer>div:nth-child(4) {
+        grid-column: 1;
+        grid-row: 5;
+    }
+}

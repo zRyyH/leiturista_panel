@@ -1,5 +1,5 @@
 import { createDirectus, rest, authentication } from '@directus/sdk';
-import { DIRECTUS, STORAGE_KEYS } from '@/constants/global';
+import { DIRECTUS, STORAGE_KEYS } from '@/core/config/global';
 import { getItem, setItem } from '@/utils/storage';
 
 class LocalStorageAuth {

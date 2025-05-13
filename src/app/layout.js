@@ -1,5 +1,5 @@
-import { NotificationProvider } from '@/contexts/NotificationContext';
-import { AuthProvider } from '@/contexts/AuthContext';
+import { NotificationProvider } from '@/core/contexts/NotificationContext';
+import { AuthProvider } from '@/core/contexts/AuthContext';
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -20,7 +20,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <AuthProvider>
           <NotificationProvider>

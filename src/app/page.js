@@ -2,9 +2,8 @@
 
 import { useRouter } from 'next/navigation';
 import SplashScreen from '@/components/ui/SplashScreen';
-import { INFO } from '@/constants/global';
+import { INFO } from '@/core/config/global';
 import logo from '@/assets/logo.png';
-
 
 export default function Home() {
   const router = useRouter();

@@ -4,11 +4,11 @@ import React from 'react';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import styles from './LoggedUserLayout.module.css';
-import { INFO } from '@/constants/global';
+import { INFO } from '@/core/config/global';
 import UserBar from '../ui/UserBar';
-import { useAuth } from '@/contexts/AuthContext';
+import { useAuth } from '@/core/contexts/AuthContext';
 import { useRouter } from 'next/navigation';
-import { DIRECTUS } from '@/constants/global';
+import { DIRECTUS } from '@/core/config/global';
 import logo from '@/assets/logo.png';
 import Image from 'next/image';
 
@@ -28,8 +28,8 @@ const Layout = ({ children }) => {
                 actions={
                     <UserBar
                         onLogout={handleLogout}
-                        userName={user?.first_name}
-                        avatarUrl={`${DIRECTUS.ASSETS_URL}/${user?.avatar}`}
+                        userName={user?.nome}
+                        avatarUrl={`${DIRECTUS.ASSETS_URL}/${user?.foto_id.id}`}
                     />
                 }
             />

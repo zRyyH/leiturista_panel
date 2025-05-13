@@ -1,0 +1,467 @@
+.tableContainer {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+}
+
+.tableHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tableIcon {
+    margin-right: 0.5rem;
+    color: var(--table-icon-color, #9ca3af);
+    flex-shrink: 0;
+}
+
+.tableTitle {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--table-title-color, #4b5563);
+    letter-spacing: 0.01em;
+}
+
+.tooltipContainer {
+    position: relative;
+    margin-left: 0.5rem;
+    display: inline-flex;
+    flex-shrink: 0;
+}
+
+.infoIcon {
+    color: var(--info-icon-color, #9ca3af);
+    cursor: help;
+}
+
+.tooltip {
+    visibility: hidden;
+    position: absolute;
+    z-index: 10;
+    width: 200px;
+    background-color: #fff;
+    color: #4b5563;
+    text-align: left;
+    border-radius: 4px;
+    padding: 0.75rem;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    font-size: 0.8125rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin-top: 0.5rem;
+    max-width: calc(100vw - 2rem);
+}
+
+.tooltipContainer:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tableWrapper {
+    overflow-x: auto;
+    border-radius: 6px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    max-width: 100%;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    /* Garantir que funcione bem em tela estreita */
+    min-width: 0;
+}
+
+.tableWrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.tableWrapper::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.tableWrapper::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    text-align: left;
+    table-layout: auto;
+    /* Permite que a tabela encolha mais em dispositivos móveis */
+    min-width: max-content;
+    font-size: 100%;
+    font-feature-settings: "tnum";
+}
+
+.caption {
+    padding: 0.75rem 1rem;
+    font-style: italic;
+    text-align: left;
+    color: var(--caption-color, #6b7280);
+    font-size: 0.8125rem;
+}
+
+.tableHead {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.th {
+    padding: 0.875rem 1rem;
+    font-weight: 500;
+    color: var(--th-color, #6b7280);
+    position: relative;
+    font-size: 0.8125rem;
+    letter-spacing: 0.015em;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.headerContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 0;
+}
+
+.sortable {
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.sortable:hover {
+    background-color: var(--th-hover-bg, rgba(0, 0, 0, 0.01));
+}
+
+.sortIcon {
+    margin-left: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    color: var(--sort-icon-color, #9ca3af);
+    flex-shrink: 0;
+}
+
+.tr {
+    transition: background-color 0.15s ease;
+}
+
+.tr:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.td {
+    padding: 0.875rem 1rem;
+    color: var(--td-color, #4b5563);
+    font-size: 0.875rem;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+/* Alignment */
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}
+
+/* Width options */
+.width-xs {
+    min-width: 3rem;
+    max-width: 5rem;
+    width: auto;
+}
+
+.width-sm {
+    min-width: 5rem;
+    max-width: 8rem;
+    width: auto;
+}
+
+.width-md {
+    min-width: 6rem;
+    max-width: 12rem;
+    width: auto;
+}
+
+.width-lg {
+    min-width: 8rem;
+    max-width: 16rem;
+    width: auto;
+}
+
+.width-xl {
+    min-width: 12rem;
+    width: auto;
+}
+
+/* Variants */
+.variant-default {
+    background-color: white;
+}
+
+.variant-striped tbody tr:nth-child(odd) {
+    background-color: var(--striped-bg, rgba(0, 0, 0, 0.01));
+}
+
+.variant-dark {
+    background-color: var(--dark-bg, #1f2937);
+}
+
+.variant-dark .th {
+    color: rgba(255, 255, 255, 0.7);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.variant-dark .td {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.variant-dark .tableHead {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.variant-dark .tr:not(:last-child) {
+    border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+.variant-dark.striped tbody tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.variant-dark.hoverable tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Sizes */
+.size-small .th,
+.size-small .td {
+    padding: 0.5rem 0.625rem;
+    font-size: 0.75rem;
+}
+
+.size-medium .th,
+.size-medium .td {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.8125rem;
+}
+
+.size-large .th,
+.size-large .td {
+    padding: 0.875rem 1rem;
+    font-size: 0.875rem;
+}
+
+/* Borders */
+.bordered {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.bordered th,
+.bordered td {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.variant-dark.bordered {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.variant-dark.bordered th,
+.variant-dark.bordered td {
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Hover effect */
+.hoverable tbody tr:hover {
+    background-color: var(--tr-hover-bg, rgba(0, 0, 0, 0.02));
+}
+
+/* Striped rows */
+.striped tbody tr:nth-child(odd) {
+    background-color: var(--striped-bg, rgba(0, 0, 0, 0.01));
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .tableTitle {
+        font-size: 0.875rem;
+    }
+
+    .size-small .th,
+    .size-small .td {
+        padding: 0.375rem 0.5rem;
+        font-size: 0.6875rem;
+    }
+
+    .size-medium .th,
+    .size-medium .td {
+        padding: 0.5rem 0.625rem;
+        font-size: 0.75rem;
+    }
+
+    .size-large .th,
+    .size-large .td {
+        padding: 0.625rem 0.75rem;
+        font-size: 0.8125rem;
+    }
+
+    .th {
+        font-size: 0.75rem;
+    }
+
+    .td {
+        font-size: 0.8125rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tableTitle {
+        font-size: 0.8125rem;
+    }
+
+    .size-small .th,
+    .size-small .td {
+        padding: 0.3125rem 0.4375rem;
+        font-size: 0.6875rem;
+    }
+
+    .size-medium .th,
+    .size-medium .td {
+        padding: 0.4375rem 0.5625rem;
+        font-size: 0.6875rem;
+    }
+
+    .size-large .th,
+    .size-large .td {
+        padding: 0.5rem 0.625rem;
+        font-size: 0.75rem;
+    }
+
+    .th {
+        font-size: 0.6875rem;
+    }
+
+    .td {
+        font-size: 0.75rem;
+    }
+
+    /* Reduz as larguras mínimas para telas muito pequenas */
+    .width-xs {
+        min-width: 2.5rem;
+        max-width: 4rem;
+    }
+
+    .width-sm {
+        min-width: 3.5rem;
+        max-width: 6rem;
+    }
+
+    .width-md {
+        min-width: 4.5rem;
+        max-width: 9rem;
+    }
+
+    .width-lg {
+        min-width: 6rem;
+        max-width: 12rem;
+    }
+
+    .width-xl {
+        min-width: 8rem;
+    }
+}
+
+/* Extra small devices - específico para 360px */
+@media (max-width: 360px) {
+    .tableContainer {
+        margin-bottom: 1rem;
+    }
+
+    .tableHeader {
+        margin-bottom: 0.75rem;
+    }
+
+    .tableTitle {
+        font-size: 0.75rem;
+    }
+
+    .th {
+        font-size: 0.625rem;
+        padding: 0.25rem 0.375rem;
+        letter-spacing: 0.01em;
+    }
+
+    .td {
+        font-size: 0.6875rem;
+        padding: 0.25rem 0.375rem;
+    }
+
+    .size-small .th,
+    .size-small .td {
+        padding: 0.25rem 0.3125rem;
+        font-size: 0.625rem;
+    }
+
+    .size-medium .th,
+    .size-medium .td {
+        padding: 0.25rem 0.375rem;
+        font-size: 0.625rem;
+    }
+
+    .size-large .th,
+    .size-large .td {
+        padding: 0.3125rem 0.4375rem;
+        font-size: 0.6875rem;
+    }
+
+    /* Redução ainda maior para larguras em telas muito estreitas */
+    .width-xs {
+        min-width: 2rem;
+        max-width: 3.5rem;
+    }
+
+    .width-sm {
+        min-width: 2.5rem;
+        max-width: 5rem;
+    }
+
+    .width-md {
+        min-width: 3.5rem;
+        max-width: 7rem;
+    }
+
+    .width-lg {
+        min-width: 4.5rem;
+        max-width: 10rem;
+    }
+
+    .width-xl {
+        min-width: 6rem;
+    }
+
+    /* Ajuste para tooltips em telas muito pequenas */
+    .tooltip {
+        width: 160px;
+        font-size: 0.75rem;
+        padding: 0.5rem;
+    }
+}

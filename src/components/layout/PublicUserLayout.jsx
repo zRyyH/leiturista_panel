@@ -4,7 +4,7 @@ import React from 'react';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import styles from './PublicUserLayout.module.css';
-import { INFO } from '@/constants/global';
+import { INFO } from '@/core/config/global';
 import logo from '@/assets/logo.png';
 import Image from 'next/image';
 

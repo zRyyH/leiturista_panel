@@ -1,0 +1,26 @@
+.page {
+    width: 100%;
+    flex-direction: column;
+    border-radius: 12px;
+    display: flex;
+    gap: 20px;
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    border-radius: 12px;
+}
+
+@media (max-width: 1300px) {
+    .infoContainer {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 650px) {
+    .infoContainer {
+        flex-direction: column;
+    }
+}

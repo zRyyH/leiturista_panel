@@ -1,0 +1,83 @@
+.cardsInfo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 66.6%;
+    gap: 15px;
+    border-radius: 10px;
+    color: #333;
+}
+
+@media (max-width: 1300px) {
+    .cardsInfo {
+        width: 100%;
+        gap: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cardsInfo {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cardsInfo {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 10px;
+    }
+}
+
+.cardsValue>div:last-child {
+    grid-column: span 2;
+}
+
+.cardsValue {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 35%;
+    gap: 15px;
+    border-radius: 10px;
+    color: #333;
+    margin-top: 0;
+}
+
+@media (max-width: 1300px) {
+    .cardsValue {
+        width: 100%;
+        gap: 14px;
+    }
+
+    .cardsValue {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .cardsValue {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 12px;
+    }
+
+    .cardsValue>div:last-child {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .cardsValue {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 10px;
+    }
+
+    .cardsValue>div:last-child {
+        grid-column: auto;
+    }
+}

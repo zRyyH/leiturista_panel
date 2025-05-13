@@ -1,0 +1,274 @@
+/* Base do Card */
+.card {
+    border-radius: 6px;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    border: 1px solid transparent;
+    border-left-width: 3px;
+}
+
+.card:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+/* Cabeçalho do Card */
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    width: 100%;
+}
+
+.title {
+    margin: 0;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.iconContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 0.25rem;
+    flex-shrink: 0;
+}
+
+/* Container de campos */
+.fieldsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+}
+
+.fieldRow {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    line-height: 1.4;
+}
+
+.fieldLabel {
+    color: inherit;
+    opacity: 0.7;
+    font-weight: 400;
+}
+
+.fieldValue {
+    font-weight: 500;
+}
+
+/* Ícone de informação */
+.infoIconContainer {
+    position: relative;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+    cursor: help;
+}
+
+.infoIconContainer:hover {
+    opacity: 1;
+}
+
+/* Tooltip */
+.tooltip {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: -10px;
+    background-color: rgba(10, 10, 10, 0.9);
+    color: white;
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    width: max-content;
+    max-width: 250px;
+    z-index: 10;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    word-wrap: break-word;
+    animation: fadeIn 0.2s ease-in-out;
+    pointer-events: none;
+    text-align: left;
+}
+
+/* Seta do tooltip */
+.tooltip::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: 15px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid rgba(10, 10, 10, 0.9);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Variantes de Tamanho */
+.sizeCompact {
+    padding: 0.5rem 0.625rem;
+    font-size: 0.75rem;
+    gap: 0.375rem;
+}
+
+.sizeCompact .title {
+    font-size: 0.75rem;
+}
+
+.sizeCompact .fieldRow {
+    font-size: 0.6875rem;
+}
+
+.sizeSmall {
+    padding: 0.625rem 0.75rem;
+    font-size: 0.8125rem;
+    gap: 0.4375rem;
+}
+
+.sizeSmall .title {
+    font-size: 0.8125rem;
+}
+
+.sizeSmall .fieldRow {
+    font-size: 0.75rem;
+}
+
+.sizeMedium {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    gap: 0.5rem;
+}
+
+.sizeMedium .title {
+    font-size: 0.875rem;
+}
+
+.sizeMedium .fieldRow {
+    font-size: 0.8125rem;
+}
+
+/* Variantes de Layout */
+.layoutHorizontal .fieldsContainer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.layoutHorizontal .fieldRow {
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 80px;
+    flex: 0 1 auto;
+}
+
+.layoutVertical .fieldsContainer {
+    flex-direction: column;
+}
+
+/* Temas de Cores */
+.themeBlue {
+    background-color: #f8fbff;
+    border-left-color: #2d82ff;
+    color: #0a5dc2;
+}
+
+.themeBlue .iconContainer {
+    background-color: rgba(45, 130, 255, 0.08);
+    color: #2d82ff;
+}
+
+.themeRed {
+    background-color: #fffafa;
+    border-left-color: #ff4d4d;
+    color: #c20a0a;
+}
+
+.themeRed .iconContainer {
+    background-color: rgba(255, 77, 77, 0.08);
+    color: #ff4d4d;
+}
+
+.themeGreen {
+    background-color: #f8fbf8;
+    border-left-color: #28c76f;
+    color: #0a8344;
+}
+
+.themeGreen .iconContainer {
+    background-color: rgba(40, 199, 111, 0.08);
+    color: #28c76f;
+}
+
+.themePurple {
+    background-color: #fbf8ff;
+    border-left-color: #9c27b0;
+    color: #6a0080;
+}
+
+.themePurple .iconContainer {
+    background-color: rgba(156, 39, 176, 0.08);
+    color: #9c27b0;
+}
+
+.themeOrange {
+    background-color: #fffbf8;
+    border-left-color: #ff9800;
+    color: #c77600;
+}
+
+.themeOrange .iconContainer {
+    background-color: rgba(255, 152, 0, 0.08);
+    color: #ff9800;
+}
+
+.themeGray {
+    background-color: #fafafa;
+    border-left-color: #757575;
+    color: #424242;
+}
+
+.themeGray .iconContainer {
+    background-color: rgba(117, 117, 117, 0.08);
+    color: #757575;
+}
+
+/* Tema Customizado */
+.themeCustom {
+    background-color: #fafafa;
+    border-left-color: var(--custom-color);
+    color: var(--custom-color);
+}
+
+.themeCustom .iconContainer {
+    background-color: var(--custom-color-light);
+    color: var(--custom-color);
+}

@@ -1,0 +1,103 @@
+/* Estilos base do botão */
+.toggleButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    font-family: inherit;
+    gap: 8px;
+    white-space: nowrap;
+    outline: none;
+}
+
+.toggleButton:focus-visible {
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Variações de tamanho */
+.size-small {
+    padding: 6px 12px;
+    font-size: 12px;
+    height: 32px;
+}
+
+.size-medium {
+    padding: 8px 16px;
+    font-size: 14px;
+    height: 40px;
+}
+
+.size-large {
+    padding: 10px 20px;
+    font-size: 16px;
+    height: 48px;
+}
+
+/* Variações de variante */
+.variant-primary.inactive {
+    background-color: #f3f4f6;
+    color: #4b5563;
+    border: 1px solid #e5e7eb;
+}
+
+.variant-primary.active {
+    background-color: #3b82f6;
+    color: white;
+    border: 1px solid #2563eb;
+}
+
+.variant-secondary.inactive {
+    background-color: #f9fafb;
+    color: #6b7280;
+    border: 1px solid #e5e7eb;
+}
+
+.variant-secondary.active {
+    background-color: #e5e7eb;
+    color: #111827;
+    border: 1px solid #d1d5db;
+}
+
+.variant-outline.inactive {
+    background-color: transparent;
+    color: #4b5563;
+    border: 1px solid #d1d5db;
+}
+
+.variant-outline.active {
+    background-color: transparent;
+    color: #3b82f6;
+    border: 1px solid #3b82f6;
+}
+
+/* Estado de hover */
+.toggleButton:not(.disabled):hover {
+    opacity: 0.9;
+}
+
+/* Estado desabilitado */
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Estilo do ícone */
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Animação suave ao alternar estados */
+.toggleButton.active,
+.toggleButton.inactive {
+    transform-origin: center;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggleButton:active:not(.disabled) {
+    transform: scale(0.97);
+}

@@ -53,3 +53,30 @@ export default function Table({ data = [], columns = [], onClickRoute }) {
         </div>
     );
 }
+
+// // Array de objetos com os dados que serão exibidos na tabela
+// const data = [
+//     {
+//         id: 1,
+//         nome: 'João Silva',
+//         email: 'joao@email.com',
+//         condominio: 'Vida Plena',
+//         unidade: '101'
+//     },
+//     {
+//         id: 2,
+//         nome: 'Maria Oliveira',
+//         email: 'maria@email.com',
+//         condominio: 'Vida Plena',
+//         unidade: '202'
+//     },
+//     // Mais dados...
+// ];
+
+// // Configuração das colunas da tabela
+// const columns = [
+//     { key: 'nome', label: 'Nome do Morador' },
+//     { key: 'email', label: 'E-mail' },
+//     { key: 'condominio', label: 'Condomínio' },
+//     { key: 'unidade', label: 'Unidade' }
+// ];
