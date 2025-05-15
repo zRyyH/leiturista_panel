@@ -1,7 +1,7 @@
 'use client';
 
 import LoggedUserLayout from "@/components/layout/LoggedUserLayout";
-import Consumption from "@/app/dashboard/components/Consumption";
+import Consumption from "@/app/panel/components/Consumption";
 import SubHeader from '@/components/sections/SubHeader';
 import styles from "./page.module.css";
 import { useState } from 'react';

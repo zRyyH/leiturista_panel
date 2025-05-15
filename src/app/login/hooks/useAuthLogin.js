@@ -15,7 +15,7 @@ export function useAuthLogin() {
             const user = await login(email, senha);
 
             if (user.role.name === 'Residente') {
-                router.push('/dashboard');
+                router.push('/panel');
             } else {
                 showNotification({
                     type: 'error',

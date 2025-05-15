@@ -1,0 +1,46 @@
+.imagesContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+    width: 100%;
+    border: 1px solid green;
+}
+
+/* Para telas muito pequenas (mobile) */
+@media (max-width: 480px) {
+    .imagesContainer {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 15px;
+    }
+}
+
+/* Para tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+    .imagesContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Para desktop pequeno */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .imagesContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Para desktop grande */
+@media (min-width: 1025px) {
+    .imagesContainer {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Estilos adicionais para a seção de métricas */
+.metricContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    width: 100%;
+}

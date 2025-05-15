@@ -40,7 +40,7 @@ export const INFO = {
     COPYRIGHT: `© 2025 HidroAPP Todos os direitos reservados.`,
     APP_NAME: 'HidroAPP',
     APP_VERSION: '1.0.0',
-    APP_DESCRIPTION: 'Sistema de Gestão de Leituras de Hidrômetros',
+    APP_DESCRIPTION: 'Sistema de hidrometrização',
     APP_AUTHOR: 'by zRyyH'
 }
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { useConsumoUnidade } from '@/app/dashboard/hooks/useProfile';
+import { useConsumoUnidade } from '@/app/panel/hooks/useProfile';
 import ToggleButton from '@/components/ui/ToggleButton';
 import GenericCard from '@/components/ui/GenericCard';
 import { DIRECTUS } from '@/core/config/global';

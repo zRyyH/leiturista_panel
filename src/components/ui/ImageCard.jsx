@@ -69,10 +69,23 @@ const ImageCard = ({
         if (onClick) onClick();
     };
 
+    const hasValidImage = src && src.trim() !== '';
+
+    if (!hasValidImage) {
+        return
+    }
+
     return (
         <div className={cardClasses} onClick={handleClick}>
             <div className={imageContainerClasses}>
-                <img src={src} alt={alt || title || 'Card image'} className={styles.image} />
+                {hasValidImage ? (
+                    <img src={src} alt={alt || title || 'Card image'} className={styles.image} />
+                ) : (
+                    <div className={styles.imagePlaceholder}>
+                        <span className={styles.placeholderIcon}>🏞️</span>
+                        <span className={styles.placeholderText}>Imagem não disponível</span>
+                    </div>
+                )}
 
                 {titlePosition === 'overlay' && (title || description) && (
                     <div className={overlayClasses}>

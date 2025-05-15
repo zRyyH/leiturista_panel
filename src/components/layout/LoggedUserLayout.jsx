@@ -9,8 +9,7 @@ import UserBar from '../ui/UserBar';
 import { useAuth } from '@/core/contexts/AuthContext';
 import { useRouter } from 'next/navigation';
 import { DIRECTUS } from '@/core/config/global';
-import logo from '@/assets/logo.png';
-import Image from 'next/image';
+import Logo from '@/components/ui/Logo';
 
 const Layout = ({ children }) => {
     const { user, logout } = useAuth();
@@ -24,7 +23,7 @@ const Layout = ({ children }) => {
     return (
         <div className={styles.layout}>
             <Header
-                logo={<Image src={logo.src} alt='logo' width={40} height={40} />}
+                logo={<Logo nome={INFO.APP_NAME} drescricao={INFO.APP_DESCRIPTION} />}
                 actions={
                     <UserBar
                         onLogout={handleLogout}

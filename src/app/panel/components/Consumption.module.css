@@ -1,0 +1,47 @@
+.consumptionContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 15px;
+    max-width: 1600px;
+    margin: 0 auto;
+    border: 1px solid green;
+    width: 100%;
+}
+
+@media (min-width: 1200px) {
+    .consumptionContainer {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+    .consumptionContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+    .consumptionContainer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+}
+
+@media (max-width: 599px) {
+    .consumptionContainer {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+.consumptionContainer {
+    transition: all 0.3s ease-in-out;
+}
+
+.consumptionContainer>* {
+    transition: transform 0.2s ease;
+}
+
+.consumptionContainer>*:hover {
+    transform: translateY(-4px);
+}

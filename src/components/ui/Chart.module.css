@@ -2,11 +2,11 @@
     font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
     position: relative;
     border-radius: 0.375rem;
-    border: 1px solid var(--border-color, #e5e7eb);
-    background-color: white;
+    border: 1px solid #2d3561;
+    background-color: #111637;
     padding: 0.5rem;
     box-sizing: border-box;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     min-height: 100px;
     width: 100%;
     overflow: hidden;
@@ -22,7 +22,7 @@
 .chartTitle {
     font-size: 0.875rem;
     font-weight: 600;
-    color: var(--chart-title-color, #111827);
+    color: #e2e8f0;
     margin: 0;
     white-space: nowrap;
     overflow: hidden;
@@ -37,7 +37,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--refresh-button-color, #6b7280);
+    color: #94a3b8;
     opacity: 0.7;
     transition: all 0.2s ease;
     padding: 0.25rem;
@@ -47,7 +47,7 @@
 
 .refreshButton:hover {
     opacity: 1;
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 .chartContent {
@@ -71,6 +71,7 @@
 
 .chartContent :global(.recharts-cartesian-grid-horizontal line),
 .chartContent :global(.recharts-cartesian-grid-vertical line) {
+    stroke: #2d3561;
     stroke-opacity: 0.3;
 }
 
@@ -80,10 +81,22 @@
 
 .chartContent :global(.recharts-default-tooltip) {
     padding: 0.25rem 0.5rem !important;
+    background-color: #1a1f47 !important;
+    border: 1px solid #2d3561 !important;
+    border-radius: 4px !important;
+}
+
+.chartContent :global(.recharts-default-tooltip .recharts-tooltip-label) {
+    color: #e2e8f0 !important;
+}
+
+.chartContent :global(.recharts-default-tooltip .recharts-tooltip-item) {
+    color: #94a3b8 !important;
 }
 
 .chartContent :global(.recharts-cartesian-axis-tick-value) {
     font-size: 0.65rem !important;
+    fill: #94a3b8 !important;
 }
 
 .placeholder {
@@ -92,7 +105,7 @@
     align-items: center;
     justify-content: center;
     height: calc(100% - 1.5rem);
-    color: var(--placeholder-color, #9ca3af);
+    color: #64748b;
     text-align: center;
     padding: 0.5rem;
 }

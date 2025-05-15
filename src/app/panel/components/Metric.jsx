@@ -1,12 +1,20 @@
 'use client';
 
-import { useMetrics } from '@/app/dashboard/hooks/useMetrics';
+import { useMetrics } from '@/app/panel/hooks/useMetrics';
 import DataTable from '@/components/ui/DataTable';
-import styles from './Consumption.module.css';
+import Loading from '@/components/ui/Loading';
 import Chart from '@/components/ui/Chart';
+import styles from './Metric.module.css';
 
-export default function MetricSection() {
-    const { loading, headers, rows, consumos } = useMetrics()
+export default function MetricSection({ tipoConsumo }) {
+    const { loading, headers, rowsAgua, consumosAgua, consumosGas, rowsGas } = useMetrics()
+
+    const consumos = tipoConsumo ? consumosGas : consumosAgua;
+    const rows = tipoConsumo ? rowsGas : rowsAgua;
+
+    if (loading) {
+        return <Loading fullPage text="Carregando..." />
+    };
 
     return (
         <div className={styles.metricContainer}>
@@ -18,15 +26,7 @@ export default function MetricSection() {
                 height={400}
             />
 
-            {/* {cards.map((card) => (
-                <ImageCard
-                    key={card.id}
-                    src={DIRECTUS.ASSETS_URL + card.src}
-                    description={card.description}
-                    onClick={card.onClick}
-                    title={card.title}
-                />
-            ))} */}
+
 
             <DataTable
                 headers={headers}

@@ -1,10 +1,5 @@
 .subHeaderContainer {
+    flex-direction: column;
     display: flex;
     gap: 15px;
-}
-
-@media (max-width: 1300px) {
-    .subHeaderContainer {
-        flex-direction: column;
-    }
 }

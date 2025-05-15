@@ -54,12 +54,12 @@
     content: '';
     flex: 1;
     height: 1px;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: #2d3561;
 }
 
 .titleText {
     font-size: 0.875rem;
-    color: #6e6e6e;
+    color: #94a3b8;
     padding: 0 0.75rem;
     white-space: nowrap;
     font-weight: 500;
@@ -75,19 +75,6 @@
 .titleRight:after {
     flex: 0;
     max-width: 2rem;
-}
-
-/* Modo escuro */
-@media (prefers-color-scheme: dark) {
-
-    .withTitle:before,
-    .withTitle:after {
-        background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    .titleText {
-        color: #a0a0a0;
-    }
 }
 
 /* Transição suave */

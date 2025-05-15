@@ -12,7 +12,7 @@
         "**/*.mjs": true,
         "**/Dockerfile": true,
         "**/*.yml": true,
-        "**/.gitignore": false,
+        "**/.gitignore": true,
         "**/*.exe": true,
         "**/.next": true,
         "**/.vscode": true,
@@ -47,9 +47,21 @@
         "src\\app\\dashboard\\hooks/useConsumoUnidade.js": true,
         "src\\app\\dashboard\\components/Consumption.module.css": true,
         "src\\app\\dashboard\\components/Consumption.jsx": true,
-        "src\\app/login": true,
+        "src\\app/login": false,
         "src\\app\\dashboard/page.module.css": true,
-        "src\\app\\dashboard/page.js": true
+        "src\\app\\dashboard/page.js": false,
+        "src\\app\\panel/page_old.js": true,
+        "src\\app\\panel\\hooks/HydrometerImages.jsx": true,
+        "src\\app\\panel\\hooks/HydrometerImages.module.css": true,
+        "src\\app\\panel\\hooks/ListCards.jsx": true,
+        "src\\app\\panel\\hooks/ListCards.module.css": true,
+        "src\\app\\panel\\hooks/MetricsAgua.jsx": true,
+        "src\\app\\panel\\hooks/MetricsAgua.module.css": true,
+        "src\\app\\panel\\hooks/MetricsGas.jsx": true,
+        "src\\app\\panel\\hooks/MetricsGas.module.css": true,
+        "src\\app\\panel\\hooks/useProfile.js": true,
+        "src\\app\\panel\\hooks/useConsumoUnidade.js": true,
+        "src\\app\\panel\\hooks/useMetrics.js": true
     },
     "explorerExclude.backup": {}
 }

@@ -7,6 +7,7 @@
     width: 100vw;
     padding: 1.5rem;
     gap: 1.5rem;
+    background-color: #0a0e27;
 }
 
 .main {
@@ -16,5 +17,5 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-    padding: 35px;
+    background-color: #0a0e27;
 }

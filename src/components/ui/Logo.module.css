@@ -1,0 +1,265 @@
+/* Fonts.module.css - Tipografia Minimalista para Logos */
+
+/* Importação de fontes minimalistas */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Classes base para logos */
+.logoFont {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #94a3b8;
+}
+
+/* Variantes de estilo de logo */
+
+/* 1. Ultra Minimalista - Inter */
+.minimalist {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+}
+
+/* 2. Geométrica Moderna - DM Sans */
+.geometric {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+/* 3. Tech Modern - Space Grotesk */
+.tech {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+/* 4. Elegante Discreta - Montserrat */
+.elegant {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+/* 5. Bold Statement - Outfit */
+.statement {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+}
+
+/* Tamanhos de logo */
+.logoSmall {
+    font-size: 1.125rem;
+    /* 18px */
+}
+
+.logoMedium {
+    font-size: 1.5rem;
+    /* 24px */
+}
+
+.logoLarge {
+    font-size: 2rem;
+    /* 32px */
+}
+
+.logoXLarge {
+    font-size: 2.5rem;
+    /* 40px */
+}
+
+.logoHero {
+    font-size: 3.5rem;
+    /* 56px */
+}
+
+/* Estilos especiais para logos */
+
+/* Logo com subtítulo */
+.logoWithTagline {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.logoMain {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.logoTagline {
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+/* Logo mono-espaçado (para empresas tech) */
+.monoLogo {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+}
+
+/* Logo com primeira letra destacada */
+.initialCap {
+    position: relative;
+}
+
+.initialCap::first-letter {
+    font-size: 1.3em;
+    font-weight: 900;
+    color: #3b82f6;
+}
+
+/* Logo com efeito de contorno */
+.outlined {
+    color: transparent;
+    -webkit-text-stroke: 1px #e2e8f0;
+    text-stroke: 1px #e2e8f0;
+}
+
+/* Logo com degradê (para uso especial) */
+.gradient {
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Logo com sombra sutil */
+.shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo condensado */
+.condensed {
+    font-stretch: condensed;
+    letter-spacing: -0.05em;
+}
+
+/* Logo expandido */
+.expanded {
+    letter-spacing: 0.15em;
+}
+
+/* Casos de uso específicos */
+
+/* Para logos de aplicativos */
+.appLogo {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.75rem;
+    letter-spacing: -0.02em;
+}
+
+/* Para logos corporativos */
+.corporateLogo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+}
+
+/* Para logos de startups */
+.startupLogo {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: -0.03em;
+}
+
+/* Animações sutis para logos interativos */
+.animated {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animated:hover {
+    letter-spacing: 0.05em;
+    transform: scale(1.02);
+}
+
+/* Estados do logo */
+.logoHover:hover {
+    color: #60a5fa;
+}
+
+.logoActive {
+    color: #3b82f6;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .logoHero {
+        font-size: 2.5rem;
+    }
+
+    .logoXLarge {
+        font-size: 2rem;
+    }
+
+    .logoLarge {
+        font-size: 1.5rem;
+    }
+
+    .logoMedium {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logoHero {
+        font-size: 2rem;
+    }
+
+    .logoXLarge {
+        font-size: 1.5rem;
+    }
+
+    .logoLarge {
+        font-size: 1.25rem;
+    }
+
+    .logoMedium {
+        font-size: 1rem;
+    }
+}
+
+/* Exemplos de uso combinado */
+.modernTechLogo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: -0.03em;
+    color: #94a3b8;
+}
+
+.minimalistBrand {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 1.75rem;
+    letter-spacing: -0.04em;
+    text-transform: lowercase;
+}
+
+.elegantCorporate {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}

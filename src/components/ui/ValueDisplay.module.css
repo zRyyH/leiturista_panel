@@ -11,9 +11,9 @@
 }
 
 .itemWrapper {
-    border: 1px solid #e2e8f0;
+    border: 1px solid #2d3561;
     border-radius: 4px;
-    background-color: #f8fafc;
+    background-color: #111637;
     min-width: 60px;
     text-align: center;
     padding: 8px 12px;
@@ -41,7 +41,7 @@
 
 .value {
     font-size: 16px;
-    color: #0f172a;
+    color: #e2e8f0;
     font-weight: 600;
 }
 
@@ -59,18 +59,18 @@
 
 /* Variantes */
 .primary .itemWrapper {
-    background-color: #f8fafc;
-    border-color: #e2e8f0;
+    background-color: #111637;
+    border-color: #2d3561;
 }
 
 .secondary .itemWrapper {
-    background-color: #f0f9ff;
-    border-color: #bae6fd;
+    background-color: #0a1832;
+    border-color: #3b5998;
 }
 
 .outlined .itemWrapper {
     background-color: transparent;
-    border-color: #cbd5e1;
+    border-color: #3b82f6;
 }
 
 /* Tamanhos */

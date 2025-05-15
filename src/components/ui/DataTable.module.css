@@ -1,6 +1,5 @@
 .tableContainer {
     width: 100%;
-    margin-bottom: 1.5rem;
     font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
 }
 
@@ -14,7 +13,7 @@
 
 .tableIcon {
     margin-right: 0.5rem;
-    color: var(--table-icon-color, #9ca3af);
+    color: #94a3b8;
     flex-shrink: 0;
 }
 
@@ -22,7 +21,7 @@
     margin: 0;
     font-size: 0.95rem;
     font-weight: 500;
-    color: var(--table-title-color, #4b5563);
+    color: #e2e8f0;
     letter-spacing: 0.01em;
 }
 
@@ -34,7 +33,7 @@
 }
 
 .infoIcon {
-    color: var(--info-icon-color, #9ca3af);
+    color: #94a3b8;
     cursor: help;
 }
 
@@ -43,8 +42,8 @@
     position: absolute;
     z-index: 10;
     width: 200px;
-    background-color: #fff;
-    color: #4b5563;
+    background-color: #1a1f47;
+    color: #e2e8f0;
     text-align: left;
     border-radius: 4px;
     padding: 0.75rem;
@@ -54,8 +53,8 @@
     opacity: 0;
     transition: opacity 0.2s ease, visibility 0.2s ease;
     font-size: 0.8125rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid #2d3561;
     margin-top: 0.5rem;
     max-width: calc(100vw - 2rem);
 }
@@ -68,14 +67,13 @@
 .tableWrapper {
     overflow-x: auto;
     border-radius: 6px;
-    background-color: white;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-    border: 1px solid rgba(0, 0, 0, 0.07);
+    background-color: #111637;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    border: 1px solid #2d3561;
     max-width: 100%;
     width: 100%;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
-    /* Garantir que funcione bem em tela estreita */
     min-width: 0;
 }
 
@@ -84,12 +82,16 @@
 }
 
 .tableWrapper::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.02);
+    background: #0a0e27;
 }
 
 .tableWrapper::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: #2d3561;
     border-radius: 20px;
+}
+
+.tableWrapper::-webkit-scrollbar-thumb:hover {
+    background-color: #404875;
 }
 
 .table {
@@ -98,7 +100,6 @@
     border-spacing: 0;
     text-align: left;
     table-layout: auto;
-    /* Permite que a tabela encolha mais em dispositivos móveis */
     min-width: max-content;
     font-size: 100%;
     font-feature-settings: "tnum";
@@ -108,18 +109,18 @@
     padding: 0.75rem 1rem;
     font-style: italic;
     text-align: left;
-    color: var(--caption-color, #6b7280);
+    color: #94a3b8;
     font-size: 0.8125rem;
 }
 
 .tableHead {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    border-bottom: 1px solid #2d3561;
 }
 
 .th {
     padding: 0.875rem 1rem;
     font-weight: 500;
-    color: var(--th-color, #6b7280);
+    color: #94a3b8;
     position: relative;
     font-size: 0.8125rem;
     letter-spacing: 0.015em;
@@ -142,14 +143,14 @@
 }
 
 .sortable:hover {
-    background-color: var(--th-hover-bg, rgba(0, 0, 0, 0.01));
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 .sortIcon {
     margin-left: 0.5rem;
     display: inline-flex;
     align-items: center;
-    color: var(--sort-icon-color, #9ca3af);
+    color: #64748b;
     flex-shrink: 0;
 }
 
@@ -158,12 +159,12 @@
 }
 
 .tr:not(:last-child) {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid #2d3561;
 }
 
 .td {
     padding: 0.875rem 1rem;
-    color: var(--td-color, #4b5563);
+    color: #e2e8f0;
     font-size: 0.875rem;
     white-space: normal;
     word-wrap: break-word;
@@ -214,42 +215,13 @@
     width: auto;
 }
 
-/* Variants */
+/* Theme dark como padrão */
 .variant-default {
-    background-color: white;
+    background-color: #111637;
 }
 
 .variant-striped tbody tr:nth-child(odd) {
-    background-color: var(--striped-bg, rgba(0, 0, 0, 0.01));
-}
-
-.variant-dark {
-    background-color: var(--dark-bg, #1f2937);
-}
-
-.variant-dark .th {
-    color: rgba(255, 255, 255, 0.7);
-    border-bottom-color: rgba(255, 255, 255, 0.1);
-}
-
-.variant-dark .td {
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.variant-dark .tableHead {
-    border-bottom-color: rgba(255, 255, 255, 0.1);
-}
-
-.variant-dark .tr:not(:last-child) {
-    border-bottom-color: rgba(255, 255, 255, 0.05);
-}
-
-.variant-dark.striped tbody tr:nth-child(odd) {
     background-color: rgba(255, 255, 255, 0.02);
-}
-
-.variant-dark.hoverable tbody tr:hover {
-    background-color: rgba(255, 255, 255, 0.03);
 }
 
 /* Sizes */
@@ -273,31 +245,22 @@
 
 /* Borders */
 .bordered {
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid #2d3561;
 }
 
 .bordered th,
 .bordered td {
-    border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.variant-dark.bordered {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.variant-dark.bordered th,
-.variant-dark.bordered td {
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid #2d3561;
 }
 
 /* Hover effect */
 .hoverable tbody tr:hover {
-    background-color: var(--tr-hover-bg, rgba(0, 0, 0, 0.02));
+    background-color: rgba(255, 255, 255, 0.03);
 }
 
 /* Striped rows */
 .striped tbody tr:nth-child(odd) {
-    background-color: var(--striped-bg, rgba(0, 0, 0, 0.01));
+    background-color: rgba(255, 255, 255, 0.02);
 }
 
 /* Responsive adjustments */
@@ -364,7 +327,6 @@
         font-size: 0.75rem;
     }
 
-    /* Reduz as larguras mínimas para telas muito pequenas */
     .width-xs {
         min-width: 2.5rem;
         max-width: 4rem;
@@ -390,7 +352,6 @@
     }
 }
 
-/* Extra small devices - específico para 360px */
 @media (max-width: 360px) {
     .tableContainer {
         margin-bottom: 1rem;
@@ -433,7 +394,6 @@
         font-size: 0.6875rem;
     }
 
-    /* Redução ainda maior para larguras em telas muito estreitas */
     .width-xs {
         min-width: 2rem;
         max-width: 3.5rem;
@@ -458,7 +418,6 @@
         min-width: 6rem;
     }
 
-    /* Ajuste para tooltips em telas muito pequenas */
     .tooltip {
         width: 160px;
         font-size: 0.75rem;

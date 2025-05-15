@@ -1,11 +1,10 @@
-/* Base do Card */
 .card {
     border-radius: 6px;
     padding: 0.75rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     transition: all 0.2s ease;
     cursor: pointer;
     user-select: none;
@@ -14,10 +13,12 @@
     width: 100%;
     border: 1px solid transparent;
     border-left-width: 3px;
+    background-color: #111637;
+    color: #e2e8f0;
 }
 
 .card:hover {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 /* Cabeçalho do Card */
@@ -36,6 +37,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    color: #e2e8f0;
 }
 
 .iconContainer {
@@ -63,13 +65,13 @@
 }
 
 .fieldLabel {
-    color: inherit;
-    opacity: 0.7;
+    color: #94a3b8;
     font-weight: 400;
 }
 
 .fieldValue {
     font-weight: 500;
+    color: #e2e8f0;
 }
 
 /* Ícone de informação */
@@ -82,6 +84,7 @@
     opacity: 0.6;
     transition: opacity 0.2s ease;
     cursor: help;
+    color: #94a3b8;
 }
 
 .infoIconContainer:hover {
@@ -93,19 +96,20 @@
     position: absolute;
     top: calc(100% + 10px);
     right: -10px;
-    background-color: rgba(10, 10, 10, 0.9);
-    color: white;
+    background-color: #1a1f47;
+    color: #e2e8f0;
     font-size: 0.75rem;
     padding: 0.5rem 0.75rem;
     border-radius: 4px;
     width: max-content;
     max-width: 250px;
     z-index: 10;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
     word-wrap: break-word;
     animation: fadeIn 0.2s ease-in-out;
     pointer-events: none;
     text-align: left;
+    border: 1px solid #2d3561;
 }
 
 /* Seta do tooltip */
@@ -118,7 +122,7 @@
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-bottom: 5px solid rgba(10, 10, 10, 0.9);
+    border-bottom: 5px solid #1a1f47;
 }
 
 @keyframes fadeIn {
@@ -196,74 +200,74 @@
 
 /* Temas de Cores */
 .themeBlue {
-    background-color: #f8fbff;
+    background-color: #0a1832;
     border-left-color: #2d82ff;
-    color: #0a5dc2;
+    color: #3b82f6;
 }
 
 .themeBlue .iconContainer {
-    background-color: rgba(45, 130, 255, 0.08);
+    background-color: rgba(45, 130, 255, 0.15);
     color: #2d82ff;
 }
 
 .themeRed {
-    background-color: #fffafa;
+    background-color: #2a0a0a;
     border-left-color: #ff4d4d;
-    color: #c20a0a;
+    color: #ef4444;
 }
 
 .themeRed .iconContainer {
-    background-color: rgba(255, 77, 77, 0.08);
+    background-color: rgba(255, 77, 77, 0.15);
     color: #ff4d4d;
 }
 
 .themeGreen {
-    background-color: #f8fbf8;
+    background-color: #0a2a1a;
     border-left-color: #28c76f;
-    color: #0a8344;
+    color: #22c55e;
 }
 
 .themeGreen .iconContainer {
-    background-color: rgba(40, 199, 111, 0.08);
+    background-color: rgba(40, 199, 111, 0.15);
     color: #28c76f;
 }
 
 .themePurple {
-    background-color: #fbf8ff;
+    background-color: #2a0a2a;
     border-left-color: #9c27b0;
-    color: #6a0080;
+    color: #a855f7;
 }
 
 .themePurple .iconContainer {
-    background-color: rgba(156, 39, 176, 0.08);
+    background-color: rgba(156, 39, 176, 0.15);
     color: #9c27b0;
 }
 
 .themeOrange {
-    background-color: #fffbf8;
+    background-color: #2a1a0a;
     border-left-color: #ff9800;
-    color: #c77600;
+    color: #fb923c;
 }
 
 .themeOrange .iconContainer {
-    background-color: rgba(255, 152, 0, 0.08);
+    background-color: rgba(255, 152, 0, 0.15);
     color: #ff9800;
 }
 
 .themeGray {
-    background-color: #fafafa;
+    background-color: #1a1f47;
     border-left-color: #757575;
-    color: #424242;
+    color: #94a3b8;
 }
 
 .themeGray .iconContainer {
-    background-color: rgba(117, 117, 117, 0.08);
+    background-color: rgba(117, 117, 117, 0.15);
     color: #757575;
 }
 
 /* Tema Customizado */
 .themeCustom {
-    background-color: #fafafa;
+    background-color: #111637;
     border-left-color: var(--custom-color);
     color: var(--custom-color);
 }

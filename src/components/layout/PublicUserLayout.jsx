@@ -5,13 +5,12 @@ import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import styles from './PublicUserLayout.module.css';
 import { INFO } from '@/core/config/global';
-import logo from '@/assets/logo.png';
-import Image from 'next/image';
+import Logo from '@/components/ui/Logo';
 
 const Layout = ({ children }) => {
     return (
         <div className={styles.layout}>
-            <Header logo={<Image src={logo.src} alt='logo' width={40} height={40} />} />
+            <Header logo={<Logo nome={INFO.APP_NAME} drescricao={INFO.APP_DESCRIPTION} />} />
 
             <main className={styles.main}>
                 {children}
